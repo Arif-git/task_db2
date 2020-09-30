@@ -6,7 +6,7 @@ node {
   docker.build('demo')
  
   stage 'Docker push'
-  docker.withRegistry('https://487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2', 'ecr:us-east-1:key-consolepolicy-3') {
+  docker.withRegistry('https://487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2', 'ecr:us-east-1:auto-ecr-1') {
     docker.image('demo').push('latest')
   }
 }
