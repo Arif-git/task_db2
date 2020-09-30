@@ -1,12 +1,12 @@
 node {
   stage 'Checkout'
-  git 'ssh://git@github.com:irwin-tech/docker-pipeline-demo.git'
+  git 'https://github.com/Arif-git/task_db2.git'
  
   stage 'Docker build'
   docker.build('demo')
  
   stage 'Docker push'
-  docker.withRegistry('https://1234567890.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:demo-ecr-credentials') {
+  docker.withRegistry('https://487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2', 'ecr:us-east-1:demo-ecr-credentials') {
     docker.image('demo').push('latest')
   }
 }
