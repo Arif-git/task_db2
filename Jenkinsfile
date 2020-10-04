@@ -15,7 +15,8 @@ pipeline {
             steps {
                 sh '''
                     whoami
-                    docker build --no-cache -t demo .
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 487920346599.dkr.ecr.us-east-1.amazonaws.com
+                    docker build -t task_db2 .
                     
                     docker tag task_db2:latest 487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2:latest
                     
