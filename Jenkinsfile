@@ -14,9 +14,9 @@ pipeline {
         stage('Docker-Build & Push-to-ECR') {
             steps {
                 sh '''
-                    docker build --no-cache -t Demo .
-                    docker tag Demo-repository:v1 487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2/Demo-repository:v1
-                    docker push 487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2/Demo-repository:v1
+                    docker build --no-cache -t demo .
+                    docker tag demo-repository:v1 487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2/demo-repository:v1
+                    docker push 487920346599.dkr.ecr.us-east-1.amazonaws.com/task_db2/demo-repository:v1
                    
                '''
             }
